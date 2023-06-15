@@ -1,11 +1,6 @@
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
-# from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-# from bs4 import BeautifulSoup
-# from re import findall, search
 import requests
 import datetime
 import os
@@ -37,6 +32,7 @@ def get_response_for_telegram(obj: dict) -> None:
     sunrise = datetime.datetime.fromtimestamp(obj.get("city").get("sunrise"))
     sunset = datetime.datetime.fromtimestamp(obj.get("city").get("sunset"))
     during_day = sunset - sunrise
+
     for item in list_weather:
         time = datetime.datetime.fromtimestamp(item.get("dt"))
         main = item.get("main")
@@ -49,7 +45,7 @@ def get_response_for_telegram(obj: dict) -> None:
         wind_speed = item.get("wind").get("speed")
         wind_gust = item.get("wind").get("gust")
         repsonse = f"*** {datetime.datetime.now().strftime('%d-%m-%Y %H:%M')} ***\n" \
-                         f"Погода в {city}e на {time.strftime('%d-%m-%Y %H:%M')}\n" \
+                         f"Погода в {city} на {time.strftime('%d-%m-%Y %H:%M')}\n" \
                          f"Описание: {description}" \
                          f"\nТемпература: {temp} градусов\n" \
                          f"Давление: {pressure} мм.рт.ст.\nУровень моря: {sea_level} м\n" \
