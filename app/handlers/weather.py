@@ -2,7 +2,7 @@ from aiogram.filters import CommandStart
 from aiogram import Router
 from aiogram.types import Message
 
-from services.format import WeatherResponseService
+from app.services.format import WeatherResponseService
 
 router = Router()
 

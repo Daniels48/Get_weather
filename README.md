@@ -1,11 +1,10 @@
-# Get Weather 🌦️
+# Get Weather 
 
-Get Weather — Telegram-бот на Python для получения информации о погоде в указанном городе.
+Get Weather — Telegram-бот на Python для получения прогноза погоды по названию города. Использует OpenWeatherMap API для получения метеорологических данных и aiogram для взаимодействия с Telegram.
 
 ## Возможности
 
 - Получение погоды по названию города
-- Обработка запросов пользователей через Telegram
 - Интеграция с API погодного сервиса
 - Вывод информации о погоде в удобном формате
 
@@ -13,55 +12,38 @@ Get Weather — Telegram-бот на Python для получения инфор
 
 - Python
 - aiogram
-- REST API
-- Асинхронное программирование (`asyncio`)
-- HTTP-запросы
+- OpenWeatherMap API
+- httpx
+- Docker
 
 ## Запуск проекта
 
-### 1. Клонирование репозитория
+### 1️⃣ Клонировать репозиторий
 
 ```bash
-git clone <URL_РЕПОЗИТОРИЯ>
+git clone https://github.com/Daniels48/Get_Weather.git
+```
+```bash
 cd Get_Weather
 ```
 
-### 2. Создание виртуального окружения
+### 2️⃣ Создать файл `.env`
 
-**Linux / macOS:**
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-**Windows (PowerShell):**
-
-```powershell
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-```
-
-### 3. Установка зависимостей
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Настройка переменных окружения
-
-Создай файл `.env` на основе `.env.example`:
+Скопируйте `.env.example` и переименуйте его в `.env`:
 
 ```bash
 cp .env.example .env
 ```
 
-Укажи токен Telegram-бота и API-ключ погодного сервиса, если он требуется используемым API.
-
-### 5. Запуск бота
+Укажи в .env необходимые значения:
 
 ```bash
-python bot.py
+TOKEN=your_telegram_bot_token
+OPENWEATHER_API_KEY=your_openweathermap_api_key
 ```
 
-Название файла запуска (`bot.py`) необходимо заменить на фактическое, если точка входа в проект называется иначе.
+### 3️⃣ Запустить контейнеры
+
+```bash
+docker compose up -d --build
+```

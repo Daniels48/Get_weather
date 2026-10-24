@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta, timezone
 import httpx
 
-from models.weathers import WeatherForecast
+from app.models.weathers import WeatherForecast
 
 
 class OpenWeatherMapClient:

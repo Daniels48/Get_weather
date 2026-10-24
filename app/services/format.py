@@ -1,5 +1,5 @@
-from services.weather import WeatherService
-from utils.format import format_weather
+from app.services.weather import WeatherService
+from app.utils.format import format_weather
 
 
 class WeatherResponseService:

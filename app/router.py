@@ -1,5 +1,5 @@
 from aiogram import Router
-from handlers.weather import router as router_weather
+from app.handlers.weather import router as router_weather
 
 router = Router()
 

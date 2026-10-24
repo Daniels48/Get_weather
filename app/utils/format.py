@@ -1,4 +1,4 @@
-from models.weathers import WeatherForecast
+from app.models.weathers import WeatherForecast
 
 
 def format_weather(forecast: WeatherForecast) -> str:

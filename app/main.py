@@ -5,7 +5,7 @@ from aiogram import Bot, Dispatcher
 from app.config import BOT_TOKEN, OPENWEATHER_API_KEY
 from app.router import router
 from app.services.weather import OpenWeatherMapClient, WeatherService
-from services.format import WeatherResponseService
+from app.services.format import WeatherResponseService
 
 
 async def main() -> None:
